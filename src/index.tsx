@@ -19,7 +19,15 @@ import { SettingsStore } from "./state/settings/store";
 import { initializeStores } from "./utils/storage";
 
 // initialize
-const key = "https://chelmtv.chelmtv.workers.dev"
+const key =
+  (window as any)?.__CONFIG__?.VITE_KEY ?? import.meta.env.VITE_KEY ?? null;
+if (key) {
+  (window as any).initMW(conf().PROXY_URLS, key);
+}
+initializeChromecast();
+registerSW({
+  immediate: true,
+});
 
 const LazyLoadedApp = React.lazy(async () => {
   await assertConfig();
