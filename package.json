@@ -1,7 +1,7 @@
 {
-  "name": "movie-web",
+  "name": "chelmtv",
   "version": "3.2.1",
-  "private": true,
+  "private": false,
   "homepage": "https://chelmtv.github.io/",
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.5",
